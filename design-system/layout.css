@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Layout Base - Estilo Premium
+   --------------------------------------------------------------------------
+   Container centralizado e fluido, seções com espaçamento generoso,
+   grids responsivos e utilitário de centralização flexível.
+
+   Container → centraliza conteúdo com largura máxima.
+   Section → espaçamento vertical adaptável a qualquer tela.
+   Grid → estrutura responsiva para 2 ou 3 colunas.
+   Center → utilitário para centralizar qualquer elemento.
+
+<body>
+│
+└── <header class="header">
+      └── <div class="container header-inner">
+            [logo]     [nav / botão mobile]
+      </div>
+
+└── <main>
+
+      <section class="hero section">
+      │   └── <div class="container grid grid-2">
+      │         ├── coluna 1 (texto)
+      │         └── coluna 2 (card / imagem)
+      │
+      └─────────────────────────────────────
+
+      <section id="features" class="section">
+      │   └── <div class="container grid grid-3">
+      │         ├── card 1
+      │         ├── card 2
+      │         └── card 3
+      │
+      └─────────────────────────────────────
+
+      <section id="about" class="section">
+          └── <div class="container">
+                └── card com conteúdo
+
+└── <footer class="section">
+      └── <div class="container grid grid-2">
+            ├── texto
+            └── links
+
+🎛 Regras principais do layout
+Classe	Função	Onde usar
+container	Limita largura + centraliza	Dentro de cada seção
+section	Adiciona respiro vertical	Em cada bloco do site
+grid	Ativa layout em grade	Quando houver múltiplos elementos irmãs
+grid-2	2 colunas (tablet+desktop)	Hero ou seções com duas partes
+grid-3	3 colunas (desktop)	Cards / Features
+center	Centraliza conteúdo	Botões, imagens, ícones
+
+Comportamento Responsivo (resumo)
+Tela	Resultado
+Mobile (<600px)	Grids viram 1 coluna automaticamente
+Tablet (600–900px)	.grid-2 vira 2 colunas, .grid-3 ainda fica 2 ou 1 dependendo
+Desktop (>900px)	.grid-3 vira 3 colunas
+
+🧠 Quando você migrar para Angular/React:
+
+O Design System CSS continua o mesmo.
+
+Só transforma cada parte visual em componentes.
+
+Exemplo em Angular:
+components/
+  hero/
+  navbar/
+  footer/
+  card/
+  chart/
+
+Exemplo em React:
+src/components/
+  Hero.jsx
+  Navbar.jsx
+  Footer.jsx
+  Card.jsx
+  Chart.jsx
+
+Minimalista branco
+
+Dark moderno
+Glass (transparente / blur)
+Neumorphism (soft UI)
+Material Design
+Tailwind-like (clean, espaçado)
+
+Vamos recapitular suas escolhas:
+
+Tipo	Estilo	Característica Visual
+Site institucional	4 → Neumorphism (Soft UI)	Bordas suaves, sombras difusas, elegante
+Landing Page	3 → Glassmorphism (Blur / Transparência)	Moderno, camadas translúcidas
+Dashboard	6 → Clean estilo Tailwind-like (espacamento + simplicidade)	UI clara, organizada, sem enfeites
+
+
+ETAPA 1 — Criamos o Design System Base (Compartilhado)
+
+Esse será o mesmo para os três projetos.
+
+Ele inclui:
+
+design-system/
+  tokens.css         (cores, espaçamentos)
+  typography.css     (tamanhos fluidos)
+  layout.css         (grid, container, spacings)
+  components.css     (botões, inputs, cards base)
+
+
+   ========================================================================== */
+
+/* Container fluido centrado */
+.container {
+  width: min(90%, 1200px);
+  margin-inline: auto;
+}
+
+/* Seções com respiro vertical generoso */
+.section {
+  padding-block: clamp(4rem, 8vw, 8rem);
+}
+
+/* Grid utilitária */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+/* Breakpoints responsivos simples */
+@media (width > 600px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width > 900px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Centralização fácil */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

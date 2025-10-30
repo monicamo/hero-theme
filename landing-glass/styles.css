@@ -1,0 +1,151 @@
+/* Fundo futurista */
+body {
+  background: linear-gradient(120deg, oklch(75% 0.12 240), oklch(65% 0.18 300));
+  font-family: "Sora", system-ui, sans-serif;
+  margin: 0;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Botão Glass */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* Gradiente futurista com movimento sutil */
+.hero-bg {
+  background: radial-gradient(
+      1200px circle at 70% 20%,
+      oklch(82% 0.23 260 / 0.7),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px circle at 20% 80%,
+      oklch(65% 0.25 300 / 0.6),
+      transparent 70%
+    );
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Conteúdo central hero */
+.hero-content {
+  max-width: 640px;
+  text-align: center;
+  backdrop-filter: blur(24px) saturate(180%);
+}
+
+/* Botões lado a lado */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+/* Botão alternativo */
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.features .card-glass {
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.final-cta {
+  text-align: center;
+  padding-block: clamp(6rem, 10vw, 10rem);
+}
+
+/* ===============================
+   Mobile Refinado
+================================= */
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: var(--space-lg);
+    backdrop-filter: blur(14px);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .features .card-glass {
+    padding: var(--space-lg);
+  }
+
+  .final-cta {
+    padding-block: var(--space-xxl);
+  }
+}
+
+@media (max-width: 420px) {
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  .btn-glass,
+  .btn-outline {
+    width: 100%;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: 0.9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer {
+  opacity: 0.75;
+  font-size: 0.9rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+.footer:hover {
+  opacity: 1;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site Soft UI - Home</title>
+    <link rel="stylesheet" href="../design-system/tokens.css" />
+    <link rel="stylesheet" href="../design-system/typography.css" />
+    <link rel="stylesheet" href="../design-system/layout.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <h1 class="logo">SoftUI Futurista</h1>
+
+        <button class="nav-toggle" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav side-menu">
+          <a href="#features">Features</a>
+          <a href="#about">Sobre</a>
+          <a href="#contact">Contato</a>
+        </nav>
+      </div>
+    </header>
+    <div id="menu-overlay"></div>
+    <main>
+      <!-- Hero Section -->
+      <section class="hero section">
+        <div class="container grid grid-2">
+          <div>
+            <h1>Transforme sua presença digital</h1>
+            <p>
+              Design futurista, experiência suave e performance real. Seu site
+              elevado ao próximo nível.
+            </p>
+            <button class="btn">Começar Agora</button>
+          </div>
+          <div class="card">
+            <h2>UI Preview</h2>
+            <p>Espaço reservado para imagem ou mockup futurista.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="section">
+        <div class="container grid grid-3">
+          <div class="card">
+            <h3>Design Responsivo</h3>
+            <p>
+              Layout que se adapta a qualquer dispositivo com fluidez e
+              elegância.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Soft UI</h3>
+            <p>
+              Cartões e botões com sombras suaves que proporcionam um visual
+              futurista.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Performance</h3>
+            <p>
+              Carregamento rápido, otimizado e pronto para integrar frameworks
+              modernos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section">
+        <div class="container">
+          <div class="card">
+            <h2>Sobre Nós</h2>
+            <p>
+              Somos especialistas em criar experiências digitais com design
+              futurista e interfaces suaves, focadas em usabilidade e inovação.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="section">
+      <div class="container grid grid-2">
+        <p>&copy; 2025 SoftUI Futurista. Todos os direitos reservados.</p>
+        <nav>
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const header = document.querySelector(".header");
+    const navLinks = document.querySelectorAll(".nav a");
+
+    navToggle.addEventListener("click", () => {
+      header.classList.toggle("nav-open");
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        header.classList.remove("nav-open");
+      });
+    });
+  </script>
+</html>

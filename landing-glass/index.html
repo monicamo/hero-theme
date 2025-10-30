@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Landing Glass - Soft Futurista</title>
+
+    <!-- Reuso do Design System -->
+    <link rel="stylesheet" href="../design-system/tokens.css" />
+    <link rel="stylesheet" href="../design-system/typography.css" />
+    <link rel="stylesheet" href="../design-system/layout.css" />
+
+    <!-- Estilo da Landing -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <section class="hero section center hero-bg">
+      <div class="container hero-content glass reveal">
+        <h1>Experiência Digital do Futuro</h1>
+        <p>
+          Interfaces translúcidas, contraste sofisticado e design que inspira
+          confiança.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-glass">Começar Agora</button>
+          <button class="btn-outline">Saiba Mais</button>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container grid grid-3 features">
+        <div class="glass card-glass reveal">
+          <h3>Design Premium</h3>
+          <p>
+            Estética moderna que transmite valor, confiança e diferencial
+            competitivo.
+          </p>
+        </div>
+        <div class="glass card-glass">
+          <h3>Alta Conversão</h3>
+          <p>Construída com foco em psicologia visual e clareza de mensagem.</p>
+        </div>
+        <div class="glass card-glass">
+          <h3>Performance Rápida</h3>
+          <p>Leve, otimizada e pronta para integrar com qualquer backend.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section center final-cta reveal">
+      <div class="container glass">
+        <h2>Pronto para elevar sua presença digital?</h2>
+        <p>Transformamos sua ideia em uma interface que inspira.</p>
+        <button class="btn-glass">Iniciar Projeto</button>
+      </div>
+    </section>
+    <footer class="footer section center">
+      <p>&copy; 2025 — Criado com design futurista.</p>
+    </footer>
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

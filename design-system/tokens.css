@@ -1,0 +1,25 @@
+:root {
+  /* Paleta principal - Roxo Futurista */
+  --color-primary: oklch(68% 0.24 300);
+  --color-primary-light: oklch(82% 0.18 300);
+  --color-primary-dark: oklch(48% 0.28 300);
+
+  /* Fundo e superfícies */
+  --color-bg: #f3f4f7;
+  --color-surface: #ffffff;
+
+  /* Texto */
+  --color-text: #282828;
+  --color-text-light: #6b6b6b;
+
+  /* Raio e espaçamentos */
+  --radius-sm: 0.4rem;
+  --radius-md: 0.8rem;
+  --radius-lg: 1.2rem;
+
+  --space-xs: 0.4rem;
+  --space-sm: 0.8rem;
+  --space-md: 1.6rem;
+  --space-lg: 2.4rem;
+  --space-xl: 3.2rem;
+}

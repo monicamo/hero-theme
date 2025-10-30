@@ -1,0 +1,72 @@
+A Landing Page deve ser um projeto irmão, não dentro do institucional.
+
+Ou seja, criamos uma nova pasta no mesmo nível:
+
+/site-soft-ui          ← Site institucional (Neumorphism)
+/landing-glass         ← Nova landing page (Glassmorphism)
+
+
+Assim:
+
+/meu-projeto
+  /site-soft-ui
+    /design-system
+    index.html
+    styles.css
+
+  /landing-glass
+    /design-system  (pode **usar os mesmos tokens**)
+    index.html
+    styles.css
+
+Como compartilhar o mesmo Design System
+
+Para evitar duplicar arquivos, fazemos assim:
+
+/meu-projeto
+  /design-system       ← fica no raiz (apenas 1 vez)
+  /site-soft-ui
+  /landing-glass
+
+Então:
+
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="../design-system/typography.css">
+<link rel="stylesheet" href="../design-system/layout.css">
+
+
+Exatamente igual ao site institucional.
+
+✅ Isso garante mesma identidade visual.
+
+
+Nome da pasta da landing
+
+Sugestões:
+
+Nome	Por quê
+landing-glass	direto, claro
+landing-futuristic	estiloso
+landing-site	simples
+lp-soft-glass	abreviado
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

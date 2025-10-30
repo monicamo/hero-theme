@@ -1,0 +1,37 @@
+/* Tipografia - Fonte Sora Futurista */
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap");
+
+html {
+  font-family: "Sora", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+/* Escala tipográfica fluida */
+h1 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 500;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  max-width: 60ch;
+}
+
+small {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
