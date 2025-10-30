@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta name="theme-color" content="#8a63ff" />
     <title>Landing Glass - Soft Futurista</title>
 
     <!-- Reuso do Design System -->
@@ -55,6 +55,72 @@
         <button class="btn-glass">Iniciar Projeto</button>
       </div>
     </section>
+    <section class="section">
+      <div class="container testimonials grid grid-3 reveal">
+        <div class="glass testimonial-card">
+          <p>
+            "O design elevou completamente nossa marca. Passou credibilidade e
+            modernidade."
+          </p>
+          <span class="avatar">👩‍💼</span>
+          <h4>Ana Rodrigues</h4>
+          <small>Diretora Criativa</small>
+        </div>
+
+        <div class="glass testimonial-card">
+          <p>
+            " Conversão aumentou em **+47%** após a nova landing.
+            Impressionante."
+          </p>
+          <span class="avatar">👨‍💻</span>
+          <h4>Lucas Mendes</h4>
+          <small>Growth Lead</small>
+        </div>
+
+        <div class="glass testimonial-card">
+          <p>
+            "Experiência impecável e execução perfeita. Parece produto de grande
+            startup."
+          </p>
+          <span class="avatar">🧑‍🚀</span>
+          <h4>Maria Xavier</h4>
+          <small>Fundadora</small>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container grid grid-3 steps reveal">
+        <div class="step glass">
+          <span>1</span>
+          <h3>Descobrimos</h3>
+          <p>Entendemos sua marca e seu público.</p>
+        </div>
+
+        <div class="step glass">
+          <span>2</span>
+          <h3>Construímos</h3>
+          <p>Criamos a interface, visual e experiência.</p>
+        </div>
+
+        <div class="step glass">
+          <span>3</span>
+          <h3>Lançamos</h3>
+          <p>Publicamos, otimizamos e acompanhamos.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section center reveal">
+      <div class="container logos">
+        <div class="logo-row">
+          <span>TechNova</span>
+          <span>FLEXDATA</span>
+          <span>BLUESCALE</span>
+          <span>ZENCORE</span>
+          <span>NEURAPPS</span>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer section center">
       <p>&copy; 2025 — Criado com design futurista.</p>
     </footer>
@@ -72,5 +138,18 @@
         .querySelectorAll(".reveal")
         .forEach((el) => observer.observe(el));
     </script>
+
+    <script>
+      const toggleDark = () => document.body.classList.toggle("dark-mode");
+    </script>
+
+    <!-- Botão de teste -->
+    <button
+      onclick="toggleDark()"
+      class="btn-glass"
+      style="position: fixed; top: 20px; right: 20px; z-index: 999"
+    >
+      🌙 Dark Mode
+    </button>
   </body>
 </html>

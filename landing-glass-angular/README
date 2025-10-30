@@ -1,0 +1,124 @@
+1. “Tudo integrado” — o que significa?
+
+Significa que todos os componentes (Hero, Features, Testimonials, Steps, Logos, CTA):
+
+usam as mesmas classes e estilos base
+compartilham o mesmo padrão visual
+seguem a mesma arquitetura Angular
+estão conectados entre si no app.component.html
+
+Ou seja:
+Você não tem pedaços soltos → você tem um sistema completo.
+
+✨ 2. Scroll Reveal funciona em todos os componentes
+
+Scroll Reveal = elementos aparecem com animação suave quando entram na tela.
+
+Isso é feito por este código no hero.component.ts (mas vale para todos):
+
+ngOnInit(): void {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+
+E no CSS, .reveal começa invisível:
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+📌 Qualquer elemento que tiver.reveal ganha animação.
+
+
+
+🌙 3. Dark Mode funciona no botão do app.component.html
+
+O botão chama uma função:
+
+toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+}
+
+
+E no CSS existe:
+
+body.dark-mode .glass {
+  background: rgba(30,30,30,0.28);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #eee;
+}
+
+📌 Isso quer dizer:
+
+Quando o usuário clica → adiciona dark-mode no <body>
+
+Todos os componentes mudam automaticamente para tema escuro
+
+Sem precisar duplicar CSS
+
+
+🟣 4. Glassmorphism aplicado uniformemente
+
+Você não coloca o estilo de vidro em cada componente manualmente.
+Você tem uma classe reutilizável chamada .glass no design system:
+
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(18px);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.1),
+    inset 0 0 0 1px rgba(255,255,255,0.25);
+}
+
+
+📌 Qualquer elemento que tiver classe .glass vira vidro, independente do componente.
+
+🧩 5. Design System centralizado em /assets/design-system
+
+Isso é o coração do projeto.
+
+/assets/design-system
+  tokens.css      → variáveis (cores, espaçamentos, sombras)
+  typography.css  → tamanhos e pesos de fonte
+  layout.css      → grids, containers, espaçamentos
+
+Exemplo do tokens.css:
+:root {
+  --radius-lg: 22px;
+  --space-md: 1.25rem;
+  --color-text: #111;
+}
+
+
+📌 Assim:
+
+Se você mudar uma cor ou espaçamento no design system
+
+Todo o projeto muda automaticamente
+
+Nada precisa ser reescrito
+
+É assim que UI modernas são construídas profissionalmente.
+
+🎯 Em resumo
+Recurso	O que significa	Por que é bom
+Integração Total	Todos os componentes harmoniosos	Site parece premium e consistente
+Scroll Reveal	Animações suaves automáticas	Sensação de sofisticação
+Dark Mode Global	1 botão muda tudo	UX moderna e zero código duplicado
+Glassmorphism Unificado	Uma classe .glass aplicada onde quiser	Visual sempre igual e bonito
+Design System Central	Estilos padronizados em um lugar só

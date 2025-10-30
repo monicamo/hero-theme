@@ -1,8 +1,93 @@
-/* Fundo futurista */
+/*
+
+Fundo futurista
+
+. Vamos deixar o HERO vivo, com um gradiente orgânico em movimento suave, estilo interface futurista premium — sem parecer site barato com arco-íris piscando 😅.
+
+O efeito será:
+
+movimento lento
+fluido
+sem distrair, apenas hipnotiza e dá sensação de profundidade
+
+Agora o seu HERO:
+
+✅ Tem massa de cor viva e suave
+✅ Parece profundidade real
+✅ Passa futurismo moderno sem neon exagerado
+✅ Continua leve (só CSS, sem JS)
+✅ Funciona em desktop e mobile
+
+
+🎩 Dica Premium (opcional mas recomendado)
+
+Adicione isto ao <head> se ainda não estiver usando:
+
+<meta name="theme-color" content="#8a63ff">
+
+
+→ Isso deixa a barra superior do Android combinando com sua landing.
+Detalhe pequeno, mas parece projeto de agência de 20K.
+
+🎉 Agora sua Landing Page está:
+Área	Status	Impacto Visual
+Hero	Cinematográfico	WOW imediato
+Features	Glass Cards	Sofisticação
+CTA Final	Persuasivo	Conversão
+Testemunhos	Humanidade	Confiança
+Steps	Clareza	Reduz incerteza
+Logos	Validação	Credibilidade instantânea
+
+Você acabou de montar uma landing de nível premium.
+
+
+
+
+
+*/
 body {
   background: linear-gradient(120deg, oklch(75% 0.12 240), oklch(65% 0.18 300));
   font-family: "Sora", system-ui, sans-serif;
   margin: 0;
+}
+
+/* ===============================
+   Dark Mode Glassmorphism
+================================= */
+
+/* Fundo escuro com gradiente sutil */
+body.dark-mode {
+  background: linear-gradient(120deg, oklch(18% 0.15 260), oklch(25% 0.1 300));
+  color: #e8e8e8;
+}
+
+/* Glass escuro */
+body.dark-mode .glass {
+  background: rgba(30, 30, 30, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  color: #e8e8e8;
+}
+
+/* Botões Dark Glass */
+body.dark-mode .btn-glass {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e8e8e8;
+}
+
+body.dark-mode .btn-glass:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Botão outline */
+body.dark-mode .btn-outline {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #e8e8e8;
+}
+body.dark-mode .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /* Glassmorphism */
@@ -33,7 +118,7 @@ body {
 }
 
 /* Gradiente futurista com movimento sutil */
-.hero-bg {
+/* .hero-bg {
   background: radial-gradient(
       1200px circle at 70% 20%,
       oklch(82% 0.23 260 / 0.7),
@@ -47,14 +132,74 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
+} */
+
+.hero-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Camadas animadas */
+.hero-bg::before,
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  top: -20%;
+  left: -20%;
+  background: radial-gradient(
+    circle at center,
+    oklch(82% 0.23 260 / 0.65),
+    transparent 70%
+  );
+  animation: float-1 18s infinite ease-in-out alternate;
+  filter: blur(120px);
+}
+
+.hero-bg::after {
+  background: radial-gradient(
+    circle at center,
+    oklch(65% 0.28 310 / 0.65),
+    transparent 70%
+  );
+  animation: float-2 22s infinite ease-in-out alternate-reverse;
+  filter: blur(140px);
+}
+
+@keyframes float-1 {
+  0% {
+    transform: translate(-10%, -10%) scale(1);
+  }
+  100% {
+    transform: translate(10%, 10%) scale(1.3);
+  }
+}
+
+@keyframes float-2 {
+  0% {
+    transform: translate(10%, 5%) scale(1.1);
+  }
+  100% {
+    transform: translate(-10%, -8%) scale(1.4);
+  }
+}
+
+/* Garante que conteúdo não seja afetado */
+.hero-content {
+  position: relative;
+  z-index: 10;
 }
 
 /* Conteúdo central hero */
-.hero-content {
+/* .hero-content {
   max-width: 640px;
   text-align: center;
   backdrop-filter: blur(24px) saturate(180%);
-}
+} */
 
 /* Botões lado a lado */
 .hero-actions {
@@ -148,4 +293,43 @@ body {
 }
 .footer:hover {
   opacity: 1;
+}
+
+.testimonial-card {
+  text-align: center;
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.testimonial-card .avatar {
+  font-size: 3rem;
+  display: block;
+  margin: var(--space-md) auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+}
+
+.step {
+  text-align: center;
+  padding: var(--space-xl);
+  position: relative;
+}
+
+.step span {
+  font-size: 2.5rem;
+  font-weight: 600;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+.logos {
+  opacity: 0.85;
+}
+
+.logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-lg);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }

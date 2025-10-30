@@ -1,0 +1,12 @@
+.step {
+  text-align: center;
+  padding: var(--space-xl);
+  position: relative;
+}
+.step span {
+  font-size: 2.5rem;
+  font-weight: 600;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
