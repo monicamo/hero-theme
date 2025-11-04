@@ -1,8 +1,10 @@
 :root {
   /* Paleta principal - Roxo Futurista */
   --color-primary: oklch(68% 0.24 300);
-  --color-primary-light: oklch(82% 0.18 300);
+  --color-primary-light: oklch(43.253% 0.17149 305.67);
   --color-primary-dark: oklch(48% 0.28 300);
+  --color-glass-bg: rgba(255, 255, 255, 0.08);
+  --color-glass-border: rgba(255, 255, 255, 0.18);
 
   /* Fundo e superfícies */
   --color-bg: #f3f4f7;
@@ -22,4 +24,12 @@
   --space-md: 1.6rem;
   --space-lg: 2.4rem;
   --space-xl: 3.2rem;
+}
+
+body.dark-mode {
+  --color-bg: #0c0c0c;
+  --color-text: #f2f2f2;
+  --color-glass-bg: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.18);
+  --color-glass-shadow: rgba(0, 0, 0, 0.55);
 }

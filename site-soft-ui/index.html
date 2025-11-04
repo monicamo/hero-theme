@@ -4,80 +4,153 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Site Soft UI - Home</title>
+
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href="../design-system/tokens.css" />
     <link rel="stylesheet" href="../design-system/typography.css" />
     <link rel="stylesheet" href="../design-system/layout.css" />
+    <link rel="stylesheet" href="../design-system/components.css" />
+    <link rel="stylesheet" href="../design-system/effects.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="container header-inner">
-        <h1 class="logo">SoftUI Futurista</h1>
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-white/5 backdrop-blur-lg border-b border-white/20"
+    >
+      <div
+        class="container mx-auto flex items-center justify-between py-4 px-6"
+      >
+        <h1 class="text-white font-semibold text-lg">SoftUI Futurista</h1>
 
-        <button class="nav-toggle" aria-label="Abrir menu">
-          <span></span><span></span><span></span>
+        <!-- Botão hambúrguer -->
+        <button id="nav-toggle" class="md:hidden flex flex-col gap-1">
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
         </button>
 
-        <nav class="nav side-menu">
-          <a href="#features">Features</a>
-          <a href="#about">Sobre</a>
-          <a href="#contact">Contato</a>
+        <!-- Menu Desktop -->
+        <nav class="hidden md:flex gap-6 text-white">
+          <a href="#features" class="hover:text-emerald-400">Features</a>
+          <a href="#about" class="hover:text-emerald-400">Sobre</a>
+          <a href="#contact" class="hover:text-emerald-400">Contato</a>
         </nav>
       </div>
     </header>
+
+    <!-- Menu lateral MOBILE -->
+    <nav
+      id="mobile-nav"
+      class="glass fixed top-0 right-0 h-full w-64 transform translate-x-full transition-transform duration-300 z-40 flex flex-col p-6 mt-12 gap-6 md:hidden"
+    >
+      <a href="#features" class="text-white font-medium hover:text-emerald-400"
+        >Features</a
+      >
+      <a href="#about" class="text-white font-medium hover:text-emerald-400"
+        >Sobre</a
+      >
+      <a href="#contact" class="text-white font-medium hover:text-emerald-400"
+        >Contato</a
+      >
+    </nav>
     <div id="menu-overlay"></div>
+
     <main>
       <!-- Hero Section -->
-      <section class="hero section">
-        <div class="container grid grid-2">
-          <div>
-            <h1>Transforme sua presença digital</h1>
-            <p>
+      <section class="min-h-[50vh] flex items-center">
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 px-6">
+          <div class="flex flex-col justify-center space-y-6">
+            <h1
+              class="text-4xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.35)]"
+            >
+              Transforme sua
+              <span class="text-emerald-400">presença digital</span>
+            </h1>
+            <p class="text-lg md:text-xl text-white/80 max-w-xl">
               Design futurista, experiência suave e performance real. Seu site
               elevado ao próximo nível.
             </p>
-            <button class="btn">Começar Agora</button>
+            <div class="flex gap-4 mt-4">
+              <button
+                class="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl shadow-lg shadow-emerald-500/40 transition-all"
+              >
+                Começar Agora
+              </button>
+
+              <button
+                class="px-6 py-3 border border-white/30 text-white rounded-xl hover:border-emerald-400 hover:text-emerald-400 transition-all"
+              >
+                Saiba Mais
+              </button>
+            </div>
           </div>
-          <div class="card">
-            <h2>UI Preview</h2>
-            <p>Espaço reservado para imagem ou mockup futurista.</p>
+          <!-- Imagem / Preview -->
+          <div
+            class="glass p-8 rounded-3xl backdrop-blur-lg border border-white/20 shadow-xl"
+          >
+            <h2 class="text-xl font-semibold text-white mb-2">UI Preview</h2>
+            <p class="text-white/70">
+              Espaço reservado para imagem ou mockup futurista.
+            </p>
           </div>
         </div>
       </section>
 
       <!-- Features Section -->
-      <section id="features" class="section">
-        <div class="container grid grid-3">
-          <div class="card">
-            <h3>Design Responsivo</h3>
-            <p>
-              Layout que se adapta a qualquer dispositivo com fluidez e
-              elegância.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Soft UI</h3>
-            <p>
-              Cartões e botões com sombras suaves que proporcionam um visual
-              futurista.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Performance</h3>
-            <p>
-              Carregamento rápido, otimizado e pronto para integrar frameworks
-              modernos.
-            </p>
+      <section id="features" class="py-24">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-center text-3xl md:text-5xl font-extrabold text-white mb-16 drop-shadow-[0_0_18px_rgba(255,255,255,0.25)]"
+          >
+            Recursos que elevam sua experiência
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-10">
+            <!-- Card -->
+            <div
+              class="bg-[var(--color-surface)] rounded-[var(--radius-lg)] p-[var(--space-lg)] shadow-[10px_10px_20px_rgba(0,0,0,0.08),-10px_-10px_20px_rgba(255,255,255,0.9)] transition-all duration-300 hover:shadow-[12px_12px_24px_rgba(0,0,0,0.12),-12px_-12px_24px_rgba(255,255,255,1)] hover:-translate-y-1"
+            >
+              <h3 class="text-xl font-semibold text-gray-400 mb-3">
+                Design Responsivo
+              </h3>
+              <p class="text-black/70">
+                Layout que se adapta a qualquer dispositivo com fluidez e
+                elegância.
+              </p>
+            </div>
+
+            <div
+              class="bg-[var(--color-surface)] rounded-[var(--radius-lg)] p-[var(--space-lg)] shadow-[10px_10px_20px_rgba(0,0,0,0.08),-10px_-10px_20px_rgba(255,255,255,0.9)] transition-all duration-300 hover:shadow-[12px_12px_24px_rgba(0,0,0,0.12),-12px_-12px_24px_rgba(255,255,255,1)] hover:-translate-y-1"
+            >
+              <h3 class="text-xl font-semibold text-gray-400 mb-3">Soft UI</h3>
+              <p>
+                Cartões e botões com sombras suaves que proporcionam um visual
+                futurista.
+              </p>
+            </div>
+            <div
+              class="bg-[var(--color-surface)] rounded-[var(--radius-lg)] p-[var(--space-lg)] shadow-[10px_10px_20px_rgba(0,0,0,0.08),-10px_-10px_20px_rgba(255,255,255,0.9)] transition-all duration-300 hover:shadow-[12px_12px_24px_rgba(0,0,0,0.12),-12px_-12px_24px_rgba(255,255,255,1)] hover:-translate-y-1"
+            >
+              <h3 class="text-xl font-semibold text-gray-400 mb-3">
+                Performance
+              </h3>
+              <p>
+                Carregamento rápido, otimizado e pronto para integrar frameworks
+                modernos.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- About Section -->
-      <section id="about" class="section">
-        <div class="container">
+      <section id="about" class="section py-20">
+        <div class="container max-w-6xl mx-auto px-6">
           <div class="card">
-            <h2>Sobre Nós</h2>
-            <p>
+            <h2 class="text-3xl font-semibold mb-4">Sobre Nós</h2>
+            <p class="text-base leading-relaxed">
               Somos especialistas em criar experiências digitais com design
               futurista e interfaces suaves, focadas em usabilidade e inovação.
             </p>
@@ -99,18 +172,18 @@
   </body>
 
   <script>
-    const navToggle = document.querySelector(".nav-toggle");
-    const header = document.querySelector(".header");
-    const navLinks = document.querySelectorAll(".nav a");
+    const navToggle = document.getElementById("nav-toggle");
+    const mobileNav = document.getElementById("mobile-nav");
 
     navToggle.addEventListener("click", () => {
-      header.classList.toggle("nav-open");
+      mobileNav.classList.toggle("translate-x-full");
     });
 
-    navLinks.forEach((link) => {
+    // Fechar ao clicar em um link
+    document.querySelectorAll("#mobile-nav a").forEach((link) =>
       link.addEventListener("click", () => {
-        header.classList.remove("nav-open");
-      });
-    });
+        mobileNav.classList.add("translate-x-full");
+      })
+    );
   </script>
 </html>

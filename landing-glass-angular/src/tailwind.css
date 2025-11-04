@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@import 'tailwindcss/preflight';
+
+@import '../../design-system/tokens.css';
+@import '../../design-system/effects.css';
+@import '../../design-system/components.css';

@@ -9,23 +9,23 @@ body {
 }
 
 /* Cartões Soft UI */
-.card {
+/* .card {
   background: var(--color-surface);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.08),
     -10px -10px 20px rgba(255, 255, 255, 0.9);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+} */
 
-.card:hover {
+/* .card:hover {
   transform: translateY(-4px);
   box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.12),
     -16px -16px 32px rgba(255, 255, 255, 1);
-}
+} */
 
 /* Botões Soft */
-.btn {
+/* .btn {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-md);
@@ -42,10 +42,10 @@ body {
   transform: translateY(-2px);
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1),
     -10px -10px 20px rgba(255, 255, 255, 1);
-}
+} */
 
 /* Inputs Soft */
-.input {
+/* .input {
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-md);
   background: var(--color-surface);
@@ -53,7 +53,7 @@ body {
   box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.06),
     inset -3px -3px 6px rgba(255, 255, 255, 0.9);
   width: 100%;
-}
+} */
 
 /* Responsividade Mobile */
 @media (max-width: 768px) {
@@ -75,15 +75,7 @@ body {
 
 /* Header */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-
-  backdrop-filter: blur(20px);
   background: rgba(255, 255, 255, 0.05);
-
   transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
 }
 
@@ -93,37 +85,9 @@ body {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* Espaço interno */
-.header-inner {
-  padding-block: 1.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 /* --- Menu Mobile (Slide Lateral) --- */
 .nav {
-  display: flex;
   gap: var(--space-md);
-  align-items: center;
-}
-
-/* Botão Hambúrguer */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.nav-toggle span {
-  width: 26px;
-  height: 3px;
-  background: var(--color-text);
-  border-radius: 2px;
-  transition: 0.3s;
 }
 
 /* Mobile */
@@ -199,20 +163,6 @@ body {
 }
 .header.nav-open .nav a:nth-child(3) {
   transition-delay: 0.3s;
-}
-
-/* Overlay futurista roxa */
-#menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: oklch(50% 0.25 300 / 0.5);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 998; /* abaixo do menu que é 999 */
 }
 
 /* Quando o menu abrir */
