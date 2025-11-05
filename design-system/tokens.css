@@ -6,8 +6,15 @@
   --color-glass-bg: rgba(255, 255, 255, 0.08);
   --color-glass-border: rgba(255, 255, 255, 0.18);
 
+  --color-primary-start: oklch(75% 0.12 240);
+  --color-primary-end: oklch(65% 0.18 300);
+
   /* Fundo e superfícies */
-  --color-bg: #f3f4f7;
+  --color-bg: linear-gradient(
+    120deg,
+    var(--color-primary-start),
+    var(--color-primary-end)
+  );
   --color-surface: #ffffff;
 
   /* Texto */
@@ -24,12 +31,90 @@
   --space-md: 1.6rem;
   --space-lg: 2.4rem;
   --space-xl: 3.2rem;
+
+  /* --- CORES DO TEMA ESCURO (NOVAS VARS) --- */
+  --color-dark-gradient-start: oklch(18% 0.15 260);
+  --color-dark-gradient-end: oklch(25% 0.1 300);
+
+  /* header */
+  --header-bg: #ecfdf5;
+  --header-border: rgba(0, 0, 0, 0.06);
+
+  /* textos */
+  --text-primary: #ffffff;
+
+  /* gradiente claro */
+  --grad-1: #7c3aed; /* violet-600 */
+  --grad-2: #a78bfa; /* violet-300 */
+  --grad-3: #60a5fa; /* sky-400 */
+
+  /* Glass header (modo claro) */
+  --glass-1: rgba(255, 255, 255, 0.18);
+  --glass-2: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.35);
+
+  /* Gradiente do fundo (claro) */
+  --grad-1: #7a00ff;
+  --grad-2: #b056ff;
+  --grad-3: #4eb3ff;
 }
 
 body.dark-mode {
-  --color-bg: #0c0c0c;
-  --color-text: #f2f2f2;
+  --color-bg: linear-gradient(
+    120deg,
+    var(--color-dark-gradient-start),
+    var(--color-dark-gradient-end)
+  );
+  --color-text: #e8e8e8;
   --color-glass-bg: rgba(255, 255, 255, 0.05);
   --color-glass-border: rgba(255, 255, 255, 0.18);
   --color-glass-shadow: rgba(0, 0, 0, 0.55);
+}
+
+:root.dark {
+  --header-bg: rgba(6, 14, 26, 0.32); /* translúcido escuro */
+  --header-border: rgba(255, 255, 255, 0.12);
+
+  /* gradiente dark */
+  --grad-1: #1a1039;
+  --grad-2: #3b1d6b;
+  --grad-3: #0c1d4b;
+  /* Glass header (modo escuro futurista) */
+  --glass-1: rgba(40, 15, 65, 0.45);
+  --glass-2: rgba(14, 8, 32, 0.35);
+  --glass-border: rgba(255, 255, 255, 0.12);
+
+  /* Gradiente do fundo (escuro) */
+  --grad-1: #1a1039;
+  --grad-2: #3b1d6b;
+  --grad-3: #0c1d4b;
+  --text-primary: #f5f5ff;
+}
+
+@layer utilities {
+  .hero-bg::before,
+  .hero-bg::after {
+    content: "";
+    position: absolute;
+    width: 140%;
+    height: 140%;
+    top: -20%;
+    left: -20%;
+    filter: blur(120px);
+    background: radial-gradient(
+      circle at center,
+      oklch(50.202% 0.28252 290.961 / 0.65),
+      transparent 70%
+    );
+    animation: var(--anim);
+  }
+
+  .hero-bg::after {
+    filter: blur(140px);
+    background: radial-gradient(
+      circle at center,
+      oklch(65% 0.28 310 / 0.65),
+      transparent 70%
+    );
+  }
 }

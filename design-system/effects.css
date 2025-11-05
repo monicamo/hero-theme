@@ -1,9 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .glass {
   background: var(--color-glass-bg);
   backdrop-filter: blur(18px);
   border: 1px solid var(--color-glass-border);
   box-shadow: 0 8px 32px var(--color-glass-shadow);
   border-radius: var(--radius-lg);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
 .reveal {

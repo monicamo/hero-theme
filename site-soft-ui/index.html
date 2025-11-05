@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <span id="home"></span>
     <header
       class="fixed top-0 left-0 w-full z-50 bg-white/5 backdrop-blur-lg border-b border-white/20"
     >
@@ -33,6 +34,7 @@
 
         <!-- Menu Desktop -->
         <nav class="hidden md:flex gap-6 text-white">
+          <a href="#home" class="hover:text-emerald-400">Home</a>
           <a href="#features" class="hover:text-emerald-400">Features</a>
           <a href="#about" class="hover:text-emerald-400">Sobre</a>
           <a href="#contact" class="hover:text-emerald-400">Contato</a>
@@ -45,6 +47,9 @@
       id="mobile-nav"
       class="glass fixed top-0 right-0 h-full w-64 transform translate-x-full transition-transform duration-300 z-40 flex flex-col p-6 mt-12 gap-6 md:hidden"
     >
+      <a href="#home" class="text-white font-medium hover:text-emerald-400"
+        >Home</a
+      >
       <a href="#features" class="text-white font-medium hover:text-emerald-400"
         >Features</a
       >
@@ -57,7 +62,7 @@
     </nav>
     <div id="menu-overlay"></div>
 
-    <main>
+    <main class="mt-40">
       <!-- Hero Section -->
       <section class="min-h-[50vh] flex items-center">
         <div class="container mx-auto grid md:grid-cols-2 gap-12 px-6">
@@ -92,6 +97,11 @@
           >
             <h2 class="text-xl font-semibold text-white mb-2">UI Preview</h2>
             <p class="text-white/70">
+              Espaço reservado para imagem ou mockup futurista.
+              Espaço reservado para imagem ou mockup futurista.
+              Espaço reservado para imagem ou mockup futurista.
+              Espaço reservado para imagem ou mockup futurista.
+              Espaço reservado para imagem ou mockup futurista.
               Espaço reservado para imagem ou mockup futurista.
             </p>
           </div>
@@ -147,9 +157,16 @@
 
       <!-- About Section -->
       <section id="about" class="section py-20">
+        <h2
+            class="text-center text-3xl md:text-5xl font-extrabold text-white mb-16 drop-shadow-[0_0_18px_rgba(255,255,255,0.25)]"
+          >
+            Detalhes Sobre Nós
+          </h2>
         <div class="container max-w-6xl mx-auto px-6">
-          <div class="card">
-            <h2 class="text-3xl font-semibold mb-4">Sobre Nós</h2>
+          <div
+            class="bg-[var(--color-surface)] rounded-[var(--radius-lg)] p-[var(--space-lg)] shadow-[10px_10px_20px_rgba(0,0,0,0.08),-10px_-10px_20px_rgba(255,255,255,0.9)] transition-all duration-300 hover:shadow-[12px_12px_24px_rgba(0,0,0,0.12),-12px_-12px_24px_rgba(255,255,255,1)] hover:-translate-y-1"
+          >
+             <h3 class="text-xl font-semibold text-gray-400 mb-3">Sobre Nós</h2>
             <p class="text-base leading-relaxed">
               Somos especialistas em criar experiências digitais com design
               futurista e interfaces suaves, focadas em usabilidade e inovação.
@@ -157,11 +174,65 @@
           </div>
         </div>
       </section>
+
+      <!-- Contact Section -->
+<section id="contact" class="py-20">
+  <h2
+    class="text-center text-3xl md:text-5xl font-extrabold text-white mb-16 drop-shadow-[0_0_18px_rgba(255,255,255,0.25)]"
+  >
+    Entre em Contato
+  </h2>
+
+  <div class="container max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+
+    <!-- Texto -->
+    <div class="space-y-4 text-white/80">
+      <h3 class="text-2xl font-semibold text-gray-300">Vamos conversar</h3>
+      <p>
+        Tem um projeto em mente? Quer modernizar seu site?
+        Fale com a gente e vamos criar algo extraordinário juntos.
+      </p>
+    </div>
+
+    <!-- Formulário -->
+    <form class="bg-[var(--color-surface)] rounded-[var(--radius-lg)] p-[var(--space-lg)] shadow-[10px_10px_20px_rgba(0,0,0,0.08),-10px_-10px_20px_rgba(255,255,255,0.9)] space-y-5">
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Seu nome"
+        class="w-full p-3 rounded-lg bg-[var(--color-surface)] text-black placeholder-black/60 outline-none border border-gray-200 focus:border-emerald-400 transition"
+      />
+
+      <input
+        type="email" name="email"
+        placeholder="Seu email"
+         class="w-full p-3 rounded-lg bg-[var(--color-surface)] text-black placeholder-black/60 outline-none border border-gray-200 focus:border-emerald-400 transition"
+      />
+
+      <textarea name="message"
+        placeholder="Digite sua mensagem..."
+        rows="4"
+        class="w-full p-3 rounded-lg bg-[var(--color-surface)] text-black placeholder-black/60 outline-none border border-gray-200 focus:border-emerald-400 transition"
+      ></textarea>
+
+      <button
+        type="submit"
+        class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl shadow-lg shadow-emerald-500/40 transition-all"
+      >
+        Enviar Mensagem
+      </button>
+
+    </form>
+  </div>
+</section>
+
+
     </main>
 
     <!-- Footer -->
     <footer class="section">
-      <div class="container grid grid-2">
+      <div class="container grid grid-cols-1 md:grid-cols-2">
         <p>&copy; 2025 SoftUI Futurista. Todos os direitos reservados.</p>
         <nav>
           <a href="#">Política de Privacidade</a>

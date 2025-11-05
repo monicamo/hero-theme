@@ -6,109 +6,127 @@
     <meta name="theme-color" content="#8a63ff" />
     <title>Landing Glass - Soft Futurista</title>
 
-    <!-- Reuso do Design System -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-    />
-
     <link rel="stylesheet" href="../design-system/tokens.css" />
     <link rel="stylesheet" href="../design-system/typography.css" />
     <link rel="stylesheet" href="../design-system/layout.css" />
 
     <!-- Estilo da Landing -->
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com" data-tailwind-cdn></script>
   </head>
 
   <body>
-    <section class="hero section center hero-bg">
-      <div class="container hero-content glass reveal">
+    <header
+      class="fixed w-full h-20 z-40 bg-[linear-gradient(120deg,var(--glass-1),var(--glass-2))] backdrop-blur-xl border-b border-[var(--glass-border)] flex items-center px-6"
+    >
+      Landing Glass - Soft Futurista
+    </header>
+    <section
+      class="hero-bg min-h-screen flex items-center relative overflow-hidden"
+    >
+      <div class="max-w-[1200px] w-[90%] mx-auto z-10 relative glass reveal">
         <h1>Experiência Digital do Futuro</h1>
         <p>
           Interfaces translúcidas, contraste sofisticado e design que inspira
           confiança.
         </p>
-        <div class="hero-actions">
+        <div class="flex justify-center gap-16 mt-8">
           <button class="btn-glass">Começar Agora</button>
           <button class="btn-outline">Saiba Mais</button>
         </div>
       </div>
     </section>
-    <section class="section">
-      <div class="container grid grid-3 features">
-        <div class="glass card-glass reveal">
+    <section
+      class="py-[clamp(4rem,8vw,8rem)] bg-gradient-to-b from-[#8A63FF]/20 to-[#2D2D6A]/40"
+    >
+      <div
+        class="max-w-[1200px] w-[90%] mx-auto grid gap-4 grid-cols-1 md:grid-cols-3"
+      >
+        <div class="glass reveal">
           <h3>Design Premium</h3>
           <p>
             Estética moderna que transmite valor, confiança e diferencial
             competitivo.
           </p>
         </div>
-        <div class="glass card-glass">
+        <div class="glass reveal">
           <h3>Alta Conversão</h3>
           <p>Construída com foco em psicologia visual e clareza de mensagem.</p>
         </div>
-        <div class="glass card-glass">
+        <div class="glass reveal">
           <h3>Performance Rápida</h3>
           <p>Leve, otimizada e pronta para integrar com qualquer backend.</p>
         </div>
       </div>
     </section>
-    <section class="section center final-cta reveal">
-      <div class="container glass">
+    <section class="py-[clamp(12rem,8vw,8rem)] center reveal">
+      <div class="max-w-[1200px] w-[90%] mx-auto glass">
         <h2>Pronto para elevar sua presença digital?</h2>
-        <p>Transformamos sua ideia em uma interface que inspira.</p>
+        <p class="py-9">
+          Transformamos sua ideia em uma interface que inspira.
+        </p>
         <button class="btn-glass">Iniciar Projeto</button>
       </div>
     </section>
-    <section class="section">
-      <div class="container testimonials grid grid-3 reveal">
-        <div class="glass testimonial-card">
-          <p>
+    <section
+      class="py-[clamp(8rem,9vw,9rem)] w-full bg-gradient-to-tr from-purple-700 via-violet-500 to-sky-500 bg-[length:200%_200%] animate-[gradientShift_12s_ease_infinite] relative overflow-hidden"
+    >
+      <div
+        class="max-w-[1200px] w-[90%] mx-auto testimonials grid reveal grid-cols-3 gap-4"
+      >
+        <div class="glass flex flex-col center py-8 px-16">
+          <p class="italic">
             "O design elevou completamente nossa marca. Passou credibilidade e
             modernidade."
           </p>
           <span class="avatar">👩‍💼</span>
-          <h4>Ana Rodrigues</h4>
-          <small>Diretora Criativa</small>
+          <h4 class="font-semibold">Ana Rodrigues</h4>
+          <small class="tracking-widest">Diretora Criativa</small>
         </div>
 
-        <div class="glass testimonial-card">
-          <p>
-            " Conversão aumentou em **+47%** após a nova landing.
+        <div class="glass flex flex-col center py-8 px-16">
+          <p class="italic">
+            "Conversão aumentou em **+47%** após a nova landing.
             Impressionante."
           </p>
           <span class="avatar">👨‍💻</span>
-          <h4>Lucas Mendes</h4>
-          <small>Growth Lead</small>
+          <h4 class="font-semibold">Lucas Mendes</h4>
+          <small class="tracking-widest">Growth Lead</small>
         </div>
 
-        <div class="glass testimonial-card">
-          <p>
+        <div class="glass flex flex-col center py-8 px-16">
+          <p class="italic">
             "Experiência impecável e execução perfeita. Parece produto de grande
             startup."
           </p>
           <span class="avatar">🧑‍🚀</span>
-          <h4>Maria Xavier</h4>
-          <small>Fundadora</small>
+          <h4 class="font-semibold">Maria Xavier</h4>
+          <small class="tracking-widest">Fundadora</small>
         </div>
       </div>
     </section>
-    <section class="section">
-      <div class="container grid grid-3 steps reveal">
-        <div class="step glass">
-          <span>1</span>
+    <section class="py-[clamp(4rem,8vw,8rem)]">
+      <div class="container grid grid-cols-3 gap-4 reveal">
+        <div class="flex flex-col center px-8 glass">
+          <span class="text-4xl block mb-6 font-bold backdrop-opacity-85"
+            >1</span
+          >
           <h3>Descobrimos</h3>
           <p>Entendemos sua marca e seu público.</p>
         </div>
 
-        <div class="step glass">
-          <span>2</span>
+        <div class="flex flex-col center px-8 glass">
+          <span class="text-4xl block mb-6 font-bold backdrop-opacity-85"
+            >2</span
+          >
           <h3>Construímos</h3>
           <p>Criamos a interface, visual e experiência.</p>
         </div>
 
-        <div class="step glass">
-          <span>3</span>
+        <div class="flex flex-col center px-8 glass">
+          <span class="text-4xl block mb-6 font-bold backdrop-opacity-85"
+            >3</span
+          >
           <h3>Lançamos</h3>
           <p>Publicamos, otimizamos e acompanhamos.</p>
         </div>

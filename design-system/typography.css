@@ -10,28 +10,17 @@ html {
 
 /* Escala tipográfica fluida */
 h1 {
-  font-size: clamp(2rem, 6vw, 3.4rem);
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: clamp(2rem, 6vw, 3.4rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
 }
 
 h2 {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  font-weight: 600;
+  font-size: clamp(1.6rem, 4vw, 2.4rem) !important;
+  font-weight: 600 !important;
 }
 
 h3 {
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
-  font-weight: 500;
-}
-
-p {
-  font-size: 1rem;
-  color: var(--color-text-light);
-  max-width: 60ch;
-}
-
-small {
-  font-size: 0.85rem;
-  opacity: 0.8;
+  font-size: clamp(1.4rem, 3vw, 1.8rem) !important;
+  font-weight: 500 !important;
 }

@@ -1,8 +1,9 @@
 body {
+  background: var(--color-bg);
   margin: 0;
   font-family: var(--font-family);
-  background: var(--color-bg);
   color: var(--color-text);
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 .container {
@@ -12,11 +13,6 @@ body {
 
 .section {
   padding-block: clamp(4rem, 8vw, 8rem);
-}
-
-.grid {
-  display: grid;
-  gap: var(--space-lg);
 }
 
 .center {
@@ -34,4 +30,86 @@ body {
   .grid-3 {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+body.dark-mode .card-glass,
+body.dark-mode .glass {
+  background: var(--color-glass-bg);
+}
+
+/* Botões Dark Glass */
+body.dark-mode .btn-glass {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e8e8e8;
+}
+
+body.dark-mode .btn-glass:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Botão outline */
+body.dark-mode .btn-outline {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #e8e8e8;
+}
+body.dark-mode .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+/* Botão Glass */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* ===============================
+   Hero
+================================= */
+
+/* Botão alternativo */
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: 0.9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
